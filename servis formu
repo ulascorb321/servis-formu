@@ -1,0 +1,204 @@
+//form1
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace servis_programı
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        public static string adsoyad, marka, arıza, not, fare, şarj, çanta, tarih, numara;
+
+        
+        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+                checkBox2.Enabled = false;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            listBox1.Items.Add(textBox1.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox5.Checked = false;
+            checkBox6.Checked = false;
+            checkBox1.Enabled = true;
+            checkBox2.Enabled = true;
+            checkBox3.Enabled = true;
+            checkBox4.Enabled = true;
+            checkBox5.Enabled = true;
+            checkBox6.Enabled = true;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true)
+            {
+                checkBox1.Enabled = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            adsoyad = textBox1.Text;
+            numara = textBox2.Text;
+            marka = textBox3.Text;
+            arıza = textBox4.Text;
+            tarih = textBox5.Text;
+            not = textBox6.Text;
+
+            if (checkBox1.Checked == true)
+            {
+                fare = checkBox1.Text;
+            }
+
+            if (checkBox2.Checked == true)
+            {
+                fare = checkBox2.Text;
+            }
+
+            if (checkBox3.Checked == true)
+            {
+                şarj = checkBox3.Text;
+            }
+
+            if (checkBox4.Checked == true)
+            {
+                şarj = checkBox4.Text;
+            }
+
+            if (checkBox5.Checked == true)
+            {
+                çanta = checkBox5.Text;
+            }
+
+            if (checkBox6.Checked == true)
+            {
+                çanta = checkBox6.Text;
+            }
+
+            
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 frm2 = new Form2();
+            frm2.Show();
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked == true)
+            {
+                checkBox4.Enabled = false;
+            }
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked == true)
+            {
+                checkBox3.Enabled = false;
+            }
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked == true)
+            {
+                checkBox6.Enabled = false;
+            }
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked == true)
+            {
+                checkBox5.Enabled = false;
+            }
+        }
+    }
+}
+
+//form2
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace servis_programı
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+        
+        
+        
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            listBox1.Items.Add("Ad Soyad:" + " " + Form1.adsoyad);
+            listBox1.Items.Add("Numara:" + " " + Form1.numara);
+            listBox1.Items.Add("Bilgisayar Marka - Model:" + " " + Form1.marka);
+            listBox1.Items.Add("Arıza:" + " " + Form1.arıza);
+            listBox1.Items.Add("Tarih:" + " " + Form1.tarih);
+            listBox1.Items.Add("Not:" + " " + Form1.not);
+            listBox1.Items.Add("Fare:" + " " + Form1.fare);
+            listBox1.Items.Add("Şarj Aleti:" + " " + Form1.şarj);
+            listBox1.Items.Add("Çanta:" + " " + Form1.çanta);
+
+            
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+    }
+}
